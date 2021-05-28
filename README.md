@@ -158,3 +158,19 @@ sudo ln -s /Applications/git-annex.app/Contents/MacOS/git-annex
 
 ## Problem #5 Path in VSCode different python version
 - Lya
+
+
+## Problem #6 It hangs while downloading files with `datalad get` at 0%
+
+Check if you have a file using this command
+
+```
+ls ~/.cache/datalad/locks/downloader-auth.lck
+```
+
+If you have it, delete it:
+
+```
+rm ~/.cache/datalad/locks/downloader-auth.lck
+```
+
