@@ -99,10 +99,10 @@ Edit that file and delete the key that is not working. For HCP, it will be `[dat
 ### macOS Keyring
 
 This means that your keys are installed in the macOS keyring. 
-1- In your mac, open the Keychain Access application.
-2- In the left panel, select "System" under "System Keychains".
-3- In the search bar (top right), type "datalad".
-4- If there are any keys named `datalad-XXXX`, these are the credentials. For HCP, you will find two instances of `datalad-hcp-s3`. Delete them both.
+1. In your mac, open the Keychain Access application.
+2. In the search bar (top right), type "datalad".
+3. If there are any keys named `datalad-XXXX`, these are the credentials. For HCP, you will find two instances of `datalad-hcp-s3`. Delete them both.
+
 
 ### Other:
 
