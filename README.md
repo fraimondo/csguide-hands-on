@@ -109,15 +109,21 @@ This means that your keys are installed in the macOS keyring.
 Please contact me. I don't know how to solve the problems as I dont have windows nor mac.
 
 ## Problem #2 Can't download data (`datalad get`)
-- Sam
-- Vera
+```
+The error looks like this:
+[ERROR  ] Failed to download from any of 1 locations [datalad.py:_transfer:162]                                                                                                                                                                                                   
+| Failed to download from any of 1 locations [datalad.py:_transfer:162]
+| Failed to download from any of 1 locations [datalad.py:_transfer:162] [get(/mnt/c/Users/svickery/Documents/CS_course/csguide_hands_on/scratch/dataset/100307/T1w/T1w_acpc_dc.nii.gz)] 
+get(error): 100307/T1w/T1w_acpc_dc.nii.gz (file) [Failed to download from any of 1 locations [datalad.py:_transfer:162]
+Failed to download from any of 1 locations [datalad.py:_transfer:162]
+Failed to download from any of 1 locations [datalad.py:_transfer:162]]
 
-We are working on it.
+```
+This happened to Sam using windows with WSL1.
+
+We are working on it. Maybe using WSL2 will help.
 
 ## Problem #3  git-annex on M1 mac
-- Tobias
-- Mostafa
-- Vera
 
 So the problem is that git-annex is not available for M1 macs, natively.
 
@@ -158,7 +164,6 @@ sudo ln -s /Applications/git-annex.app/Contents/MacOS/git-annex
 
 ## Problem #5 Path in VSCode different python version
 - Lya
-
 
 ## Problem #6 It hangs while downloading files with `datalad get` at 0%
 
