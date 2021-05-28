@@ -96,14 +96,53 @@ This means that your keys are installed in the macOS keyring.
 
 Please contact me. I don't know how to solve the problems as I dont have windows nor mac.
 
-2- Wrong key being red (new key not recognised)
+## Problem #2 Can't download data (`datalad get`)
 - Sam
+- Vera
 
-3- git-annex on M1 mac
+We are working on it.
+
+## Problem #3  git-annex on M1 mac
 - Tobias
 - Mostafa
+- Vera
 
-4- ipykernel keeps installing on environment
+So the problem is that git-annex is not available for M1 macs, natively.
+
+Solution:
+
+1- Install Rosetta 2: Open a terminal and execute
+```
+/usr/sbin/softwareupdate --install-rosetta --agree-to-license
+```
+
+2- Download the git-annex DMG file from here: https://downloads.kitenet.net/git-annex/OSX/current/10.10_Yosemite/git-annex.dmg
+
+3- Open the DMG file. Drag and drop the git-annex app to the /Applications folder.
+
+4- In the terminal, run:
+```
+/Applications/git-annex.app/Contents/MacOS/git-annex
+```
+Once you do that, a message will appear saying that you can't execute that.
+
+5- Open the System Preferences. Go to Security & Privacy. In the general tab, click on "Open anyway". Another message will apear, click open.
+
+6- In the terminal, run:
+```
+/Applications/git-annex.app/Contents/MacOS/git-annex
+```
+You should see the output of git-annex.
+
+7- Create a symbolic link so it's always on the path.
+
+```
+cd /usr/local/bin
+sudo ln -s /Applications/git-annex.app/Contents/MacOS/git-annex
+```
+
+## Problem #4 keeps installing an environment
 - Nevena
 
-5- Path in VSCode different python version
+## Problem #5 Path in VSCode different python version
+- Lya
