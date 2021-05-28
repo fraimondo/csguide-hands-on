@@ -2,15 +2,27 @@
 
 # Requirements
 
-Install dependencies
+1. Create an environment
 
 ```
-conda install -c conda-forge git-annex datalad nilearn
+conda create -n csguide python=3.9
 ```
 
-if using jupyter-style
+2. Activate the environment
+   
+```
+conda activate csguide
 ```
 
+3. Install dependencies
+
+```
+conda install ipython flake8
+conda install -c conda-forge datalad nilearn
+```
+
+if using jupyter-style execution
+```
 conda install -c conda-forge nest-asyncio
 ```
 
