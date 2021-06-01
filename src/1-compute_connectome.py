@@ -33,7 +33,8 @@ dataset_path = working_dir / 'dataset'
 dataset_url = ('https://github.com/datalad-datasets/'
                'hcp-functional-connectivity.git')
 
-datalad.api.install(path=dataset_path, source=dataset_url)  # type: ignore
+dataset = datalad.api.install(  # type: ignore
+    path=dataset_path, source=dataset_url)
 
 # %%
 # Get rsFMRI

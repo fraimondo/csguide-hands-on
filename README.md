@@ -160,7 +160,22 @@ sudo ln -s /Applications/git-annex.app/Contents/MacOS/git-annex
 ```
 
 ## Problem #4 keeps installing an environment
-- Nevena
+
+This was related to having anaconda/miniconda installed before the course. It needed to update `conda`. To do so, in the base environment:
+
+```
+conda update conda
+```
+
+Then activate the csguide environment:
+```
+conda activate csguide
+```
+
+and update all the packages:
+```
+conda update --all
+```
 
 ## Problem #5 Path in VSCode different python version
 - Lya
