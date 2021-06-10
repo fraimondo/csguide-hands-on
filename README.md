@@ -96,6 +96,16 @@ secret_5fid =
 Edit that file and delete the key that is not working. For HCP, it will be `[datalad_2Dhcp_2Ds3]`. Delete that line, as well as key_5fid and secret_5fid.
 
 
+### SecretService Keyring
+
+Use the utility `seahorse` and remove the elements
+
+_Password for 'key_id' on 'datalad-hcp-s3'_
+_Password for 'secret_id' on 'datalad-hcp-s3'_
+
+If you don't have `seahorse` installed, you can install it.
+
+
 ### macOS Keyring
 
 This means that your keys are installed in the macOS keyring. 
