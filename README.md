@@ -17,7 +17,7 @@ conda activate csguide
 3. Install dependencies
 
 ```
-conda install ipython flake8
+conda install ipython flake8 scipy
 conda install -c conda-forge datalad nilearn
 ```
 

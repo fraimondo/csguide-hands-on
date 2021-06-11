@@ -12,8 +12,11 @@ initial_dir     = /home/fraimondo/doc/csguidehandson/src
 executable      = $(initial_dir)/run_in_venv.sh
 transfer_executable = False
 
-log             = 
-output          =
-error           =
+arguments       = csguide python 1-compute_connectome.py /tmp /data/project/deleted_every_sunday/svickery/csguide $(subject)
 
+log             = $(initial_dir)/logs/test.log
+output          = $(initial_dir)/logs/test.out
+error           = $(initial_dir)/logs/test.err
+
+subject = 100206
 queue
