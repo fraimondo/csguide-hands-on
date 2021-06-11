@@ -135,3 +135,5 @@ to_save = {
 
 sio.savemat(results_fname, to_save)
 # %%
+
+print('Compute COMPLETED YAY!!!!')
