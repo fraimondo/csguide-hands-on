@@ -85,7 +85,7 @@ print(f'Atlas located in {atlas_filename}')
 
 # %%
 # Apply Atlas
-
+print('Creating Nifti Labels Masker')
 masker = NiftiLabelsMasker(labels_img=atlas_filename, standardize=True,
                            verbose=5)
 
@@ -96,6 +96,7 @@ full_rsfmri_fname = dataset_path / rsfmri_fname
 full_confounds_fname = dataset_path / confounds_fname
 
 # Convert Path to string before calling
+print('Masking time series')
 time_series = masker.fit_transform(
     full_rsfmri_fname.as_posix(),
     confounds=full_confounds_fname.as_posix())
@@ -103,9 +104,10 @@ time_series = masker.fit_transform(
 
 # %%
 # Compute functional connectivity
-
+print('Computing connectivity')
 correlation_measure = ConnectivityMeasure(kind='correlation')
 correlation_matrix = correlation_measure.fit_transform([time_series])[0]
+print('Connectivity done')
 
 # %%
 # Plot to check
@@ -125,6 +127,7 @@ correlation_matrix = correlation_measure.fit_transform([time_series])[0]
 
 # %%
 # Save Connectome to file
+print(f'Creating results directory {results_dir.as_posix()}')
 results_dir.mkdir(exist_ok=True, parents=True)
 results_fname = results_dir / f'{subject}_connectome.mat'
 
@@ -132,7 +135,7 @@ to_save = {
     'connectome': correlation_matrix,
     'labels': atlas.labels
 }
-
+print(f'Saving .MAT results to {results_fname}')
 sio.savemat(results_fname, to_save)
 # %%
 
