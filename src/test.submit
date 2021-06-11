@@ -1,0 +1,19 @@
+# The environment
+universe        = vanilla
+getenv          = True
+
+# Resources
+request_cpus    = 1
+request_memory  = 10G
+request_disk    = 2G
+
+# Executable
+initial_dir     = /home/fraimondo/doc/csguidehandson/src
+executable      = $(initial_dir)/run_in_venv.sh
+transfer_executable = False
+
+log             = 
+output          =
+error           =
+
+queue

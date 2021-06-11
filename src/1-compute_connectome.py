@@ -1,4 +1,7 @@
 # INPUT:
+#   1. working_dir = working directory to clone the datalad dataset
+#   2. results_dir = path to the directory where to place the results
+#   3. subject = subject id
 #
 # DESCRIPTION:
 # This script clones the HCP datalad dataset (functional connectivity) and
@@ -6,11 +9,13 @@
 # with 100 parcels.
 #
 # OUTPUT:
-#
+#   1. A file named {subject}_connectome.mat with the correlation matrix and
+#      atlas labels stored in results_dir
 #
 
 # %%
 # Imports
+import sys
 from pathlib import Path
 
 from scipy import io as sio
@@ -29,13 +34,23 @@ import datalad.api  # noqa
 # Variables
 
 # Path to the working directory (relative to CWD)
-working_dir = Path('../scratch')
-
+# working_dir = Path('../scratch')
+working_dir = sys.argv[1]
 # Path to the results
-results_dir = Path('../scratch')
+# results_dir = Path('../scratch')
+results_dir = sys.argv[2]
 
 # the subject to compute
-subject = '100206'
+# subject = '100206'
+subject = sys.argv[3]
+
+
+print(f'INPUT working_dir = {working_dir}')
+print(f'INPUT results_dir = {results_dir}')
+print(f'INPUT subject = {subject}')
+
+working_dir = Path(working_dir)
+results_dir = Path(results_dir)
 
 # %%
 # Install datalad dataset
@@ -111,6 +126,7 @@ print('Connectivity done')
 
 # %%
 # Plot to check
+
 # Plot the correlation matrix
 # import numpy as np
 # from nilearn import plotting
