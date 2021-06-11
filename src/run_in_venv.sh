@@ -15,3 +15,5 @@ conda activate "${env_name}"
 shift 1
 echo "Running ${@} in virtual environment"
 $@
+
+echo "done"
