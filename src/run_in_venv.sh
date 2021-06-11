@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ $# -lt 2 ]; then
-    echo "This script is ment to run a command within a python environment"
+    echo "This script is meant to run a command within a python environment"
     echo "It needs at least 2 parameters."
     echo "The first one must be the environment name."
     echo "The rest will be the command"
